@@ -7,13 +7,15 @@ namespace LeonDrace.TypeObserverEventSystem
 	{
 		private Listeners[] m_Listeners;
 
-		public void Awake()
+		public override void Awake()
 		{
-			//create one EventListener<T> where T : IEventInvoker for each event type
+			base.Awake();
+
+			//Create one EventListener<T> where T : IEventInvoker for each event type.
 			Type typedef = typeof(EventListener<>);
-			//array is actually faster than a dictionary with key System.Type
-			//because getting the hashcode and collisions seems to be quite expensive
-			//in most cases probably negligible
+			//Array is actually faster than a dictionary with key System.Type.
+			//Because getting the hashcode and collisions seems to be quite expensive
+			//in most cases probably negligible.
 			m_Listeners = new Listeners[EventBusUtil.EventTypes.Count];
 			int i = 0;
 			foreach (Type eventType in EventBusUtil.EventTypes)

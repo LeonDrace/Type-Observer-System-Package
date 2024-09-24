@@ -32,7 +32,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
 				if (s_Instance == null)
 				{
-					Debug.LogError($"{nameof(T)} Specified Singleton does not found!");
+					Debug.LogError($"{nameof(T)} Specified Singleton was not found!");
 					return default;
 				}
 			}
@@ -43,9 +43,13 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
 	public virtual void Awake()
 	{
-		if (s_Instance != null)
+		//Destroy newly created instance one already exists.
+		if (s_Instance is not null && s_Instance != this)
 		{
 			Destroy(gameObject);
+#if UNITY_EDITOR
+			Debug.Log("Destroyed newly created Eventmanager, one already exists.");
+#endif
 			return;
 		}
 
