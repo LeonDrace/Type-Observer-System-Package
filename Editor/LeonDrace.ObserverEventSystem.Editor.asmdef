@@ -1,6 +1,6 @@
 {
-    "name": "LeonDrace.TypeObserverEventSystem.Editor",
-    "rootNamespace": "LeonDrace.TypeObserverEventSystem.Editor",
+    "name": "LeonDrace.ObserverEventSystem.Editor",
+    "rootNamespace": "LeonDrace.ObserverEventSystem.Editor",
     "references": [
         "GUID:50cb4924dde8d8141918076b8aa1b60d"
     ],

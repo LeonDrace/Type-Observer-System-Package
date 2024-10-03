@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace LeonDrace.TypeObserverEventSystem
+namespace LeonDrace.ObserverEventSystem.Observables
 {
 	[System.Serializable]
 	public class UnityObservable<T>

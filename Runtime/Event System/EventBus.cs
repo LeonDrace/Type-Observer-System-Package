@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LeonDrace.TypeObserverEventSystem
+namespace LeonDrace.ObserverEventSystem
 {
 	public static class EventBus<T> where T : IEventInvoker
 	{

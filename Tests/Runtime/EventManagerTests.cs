@@ -1,12 +1,12 @@
 using NUnit.Framework;
 using UnityEngine;
-using static LeonDrace.TypeObserverEventSystem.EventInvokers;
+using static LeonDrace.ObserverEventSystem.EventInvokers;
 
 #if UNITY_EDITOR
 
-namespace LeonDrace.TypeObserverEventSystem.Tests
+namespace LeonDrace.ObserverEventSystem.Tests
 {
-	public class RuntimeTests
+	public class EventManagerTests
 	{
 		#region Event Manager
 

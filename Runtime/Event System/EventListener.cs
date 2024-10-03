@@ -1,6 +1,6 @@
 using System;
 
-namespace LeonDrace.TypeObserverEventSystem
+namespace LeonDrace.ObserverEventSystem
 {
 	internal interface IEventListener
 	{

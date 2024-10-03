@@ -2,7 +2,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace LeonDrace.TypeObserverEventSystem.Editor
+namespace LeonDrace.ObserverEventSystem.Observables.Editor
 {
 	[CustomPropertyDrawer(typeof(UnityObservable<>))]
 	public class UnityObservableDrawer : PropertyDrawer

@@ -1,4 +1,4 @@
-﻿namespace LeonDrace.TypeObserverEventSystem
+﻿namespace LeonDrace.ObserverEventSystem
 {
 	/// <summary>
 	/// Event signature interface to transfer data to inoked listeners.

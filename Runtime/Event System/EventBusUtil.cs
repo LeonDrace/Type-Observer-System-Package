@@ -4,14 +4,14 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace LeonDrace.TypeObserverEventSystem
+namespace LeonDrace.ObserverEventSystem
 {
 	public static class EventBusUtil
 	{
 		public static IReadOnlyList<Type> EventTypes { get; set; }
 		public static IReadOnlyList<Type> EventBusTypes { get; set; }
 
-		private static readonly string s_AssemblyName = "LeonDrace.TypeObserverEventSystem";
+		private static readonly string s_AssemblyName = "LeonDrace.ObserverEventSystem";
 
 #if UNITY_EDITOR
 		public static PlayModeStateChange PlayModeState { get; set; }

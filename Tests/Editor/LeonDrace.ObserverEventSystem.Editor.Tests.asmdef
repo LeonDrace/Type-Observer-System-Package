@@ -1,12 +1,14 @@
 {
-    "name": "LeonDrace.TypeObserverEventSystem.Runtime.Tests",
-    "rootNamespace": "LeonDrace.TypeObserverEventSystem.Tests",
+    "name": "LeonDrace.ObserverEventSystem.Editor.Tests",
+    "rootNamespace": "LeonDrace.ObserverEventSystem.Tests",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "LeonDrace.TypeObserverEventSystem"
+        "LeonDrace.ObserverEventSystem"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
@@ -14,7 +16,9 @@
         "nunit.framework.dll"
     ],
     "autoReferenced": false,
-    "defineConstraints": [],
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
     "versionDefines": [],
     "noEngineReferences": false
 }

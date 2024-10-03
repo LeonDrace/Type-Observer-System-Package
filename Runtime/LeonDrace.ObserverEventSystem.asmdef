@@ -1,6 +1,6 @@
 {
-    "name": "LeonDrace.TypeObserverEventSystem",
-    "rootNamespace": "LeonDrace.TypeObserverEventSystem",
+    "name": "LeonDrace.ObserverEventSystem",
+    "rootNamespace": "LeonDrace.ObserverEventSystem",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

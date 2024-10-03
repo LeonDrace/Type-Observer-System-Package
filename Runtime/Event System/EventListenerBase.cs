@@ -1,6 +1,6 @@
 using System;
 
-namespace LeonDrace.TypeObserverEventSystem
+namespace LeonDrace.ObserverEventSystem
 {
 	/// <summary>
 	/// Should be the base class of almost every <see cref="EventListener{T}"/>.

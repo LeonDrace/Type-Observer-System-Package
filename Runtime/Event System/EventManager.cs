@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace LeonDrace.TypeObserverEventSystem
+namespace LeonDrace.ObserverEventSystem
 {
 	public class EventManager : MonoSingleton<EventManager>
 	{
