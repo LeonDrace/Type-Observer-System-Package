@@ -5,6 +5,7 @@ Also provides a low level api to self-manage events.
 
 ### How To Install:
 Unity Package Manager - add package from git URL: https://github.com/LeonDrace/Type-Observer-System-Package.git
+
 Alternatively specific version: https://github.com/LeonDrace/Type-Observer-System-Package.git#v0.10.0
 
 ### How To Use:
