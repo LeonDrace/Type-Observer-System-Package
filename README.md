@@ -4,9 +4,17 @@ An observer event system with an Event Manager which auto creates all existing e
 Also provides a low level api to self-manage events.
 
 ### How To Install:
-Unity Package Manager Import URL: https://github.com/LeonDrace/Type-Observer-System-Package.git
+Unity Package Manager - add package from git URL: https://github.com/LeonDrace/Type-Observer-System-Package.git
+Alternatively specific version: https://github.com/LeonDrace/Type-Observer-System-Package.git#v0.10.0
 
 ### How To Use:
+
+Namespace:
+```sh
+using LeonDrace.ObserverEventSystem;
+```
+
+
 First extend the partial class EventInvokers with your own events.
 
 * Event Markers/Invokers
@@ -26,7 +34,7 @@ Extended the events by a health event providing the new health value.
 
 * Health Event
 ```sh
- public partial class EventInvokers
+public partial class EventInvokers
 {
 	public class HealthEvent : IEventInvoker
 	{
@@ -62,3 +70,8 @@ public void InvokeHealthEvent()
 ### Observables
 There is an Observable<T> and UnityObservable<T> class that you can use as well to create observable fields of any kind.
 They do support Inspector updates too.
+
+Namespace:
+```sh
+using LeonDrace.ObserverEventSystem.Observables;
+```
