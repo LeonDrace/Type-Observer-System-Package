@@ -23,17 +23,21 @@ Namespace:
 using LeonDrace.ObserverEventSystem;
 ```
 
-* Event Markers/Invokers
+### Event Markers/Invokers
 
-Create your own events which only need to inherit the IEventInvoker type as shown below with the HealthEvent.
-You can use structs too.
+* Create your own events which only need to implement the IEventInvoker type as shown below with the HealthEvent.
 
-By default it will search all assemblies and find all events automatically.
+* You can use structs too.
 
-But to improve search time you can create a scriptable object through the right click context menu: LeonDrace/ObserverEventData.
-Put that scriptable object into the resource folder. (There is no Addressables support yet, remove it and default back to auto search).
-Add the assembly names in which your Events are a part of.
-By default it contains the package assembly for the NoArgsEvent and the default assemblies when no assembly definition is used.
+* By default it will search all assemblies and find all events automatically.
+
+* But to improve search time you can create a scriptable object through the right click context menu: LeonDrace/ObserverEventData.
+
+* Put that scriptable object into the resource folder. (There is no Addressables support yet, in that case remove it and default back to auto search).
+
+* Add the assembly names in which your Events are a part of.
+
+* By default it contains the package assembly for the NoArgsEvent and the default assemblies when no assembly definition is used.
 
 ### Example:
 
