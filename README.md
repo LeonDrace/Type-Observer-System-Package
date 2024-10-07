@@ -23,19 +23,17 @@ Namespace:
 using LeonDrace.ObserverEventSystem;
 ```
 
-
-First extend the partial class EventInvokers with your own events.
-
 * Event Markers/Invokers
-```sh
-public partial class EventInvokers
-{
-	public static NoArgsEvent NoArgs => new();
 
-	public class NoArgsEvent : IEventInvoker { }
-}
-```
+Create your own events which only need to inherit the IEventInvoker type as shown below with the HealthEvent.
 You can use structs too.
+
+By default it will search all assemblies and find all events automatically.
+
+But to improve search time you can create a scriptable object through the right click context menu: LeonDrace/ObserverEventData.
+Put that scriptable object into the resource folder. (There is no Addressables support yet, remove it and default back to auto search).
+Add the assembly names in which your Events are a part of.
+By default it contains the package assembly for the NoArgsEvent and the default assemblies when no assembly definition is used.
 
 ### Example:
 
@@ -43,12 +41,9 @@ Extended the events by a health event providing the new health value.
 
 * Health Event
 ```sh
-public partial class EventInvokers
+public class HealthEvent : IEventInvoker
 {
-	public class HealthEvent : IEventInvoker
-	{
-		public float m_Health;
-	}
+	public float m_Health;
 }
 ```
 

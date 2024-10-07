@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using static LeonDrace.ObserverEventSystem.EventInvokers;
 
 namespace LeonDrace.ObserverEventSystem.Tests
 {
@@ -117,7 +116,7 @@ namespace LeonDrace.ObserverEventSystem.Tests
 		{
 			EventListener<NoArgsEvent> listener = new EventListener<NoArgsEvent>(TestItemCallback);
 			EventBus<NoArgsEvent>.Register(listener);
-			EventBus<NoArgsEvent>.Invoke(NoArgs);
+			EventBus<NoArgsEvent>.Invoke(new NoArgsEvent());
 			EventBus<NoArgsEvent>.Unregister(listener);
 		}
 

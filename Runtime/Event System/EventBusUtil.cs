@@ -11,8 +11,6 @@ namespace LeonDrace.ObserverEventSystem
 		public static IReadOnlyList<Type> EventTypes { get; set; }
 		public static IReadOnlyList<Type> EventBusTypes { get; set; }
 
-		private static readonly string s_AssemblyName = "LeonDrace.ObserverEventSystem";
-
 #if UNITY_EDITOR
 		public static PlayModeStateChange PlayModeState { get; set; }
 
@@ -36,7 +34,10 @@ namespace LeonDrace.ObserverEventSystem
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		public static void Initialize()
 		{
-			EventTypes = GetTypes2(s_AssemblyName, typeof(IEventInvoker));
+			var eventData = ObserverEventData.TryGet();
+
+			EventTypes = eventData != null ?
+				GetTypeFromAssembly(typeof(IEventInvoker), eventData.Assemblies) : GetTypeFromAllAssembly(typeof(IEventInvoker));
 			EventBusTypes = InitializeAllBuses();
 		}
 
@@ -71,7 +72,7 @@ namespace LeonDrace.ObserverEventSystem
 			}
 		}
 
-		public static List<Type> GetTypes2(string assemblyName, Type interfaceType)
+		public static List<Type> GetTypeFromAssembly(Type interfaceType, params string[] assemblyNames)
 		{
 			Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
@@ -79,11 +80,28 @@ namespace LeonDrace.ObserverEventSystem
 
 			for (int i = 0; i < assemblies.Length; i++)
 			{
-				if (assemblies[i].GetName().Name == assemblyName)
+				foreach (var assemblyName in assemblyNames)
 				{
-					AddTypesFromAssembly(assemblies[i].GetTypes(), interfaceType, filteredTypes);
-					break;
+					if (assemblies[i].GetName().Name == assemblyName)
+					{
+						AddTypesFromAssembly(assemblies[i].GetTypes(), interfaceType, filteredTypes);
+						break;
+					}
 				}
+			}
+
+			return filteredTypes;
+		}
+
+		public static List<Type> GetTypeFromAllAssembly(Type interfaceType)
+		{
+			Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+
+			List<Type> filteredTypes = new List<Type>();
+
+			foreach (Assembly assembly in assemblies)
+			{
+				AddTypesFromAssembly(assembly.GetTypes(), interfaceType, filteredTypes);
 			}
 
 			return filteredTypes;

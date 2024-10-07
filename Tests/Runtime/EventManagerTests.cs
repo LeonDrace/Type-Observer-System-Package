@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using UnityEngine;
-using static LeonDrace.ObserverEventSystem.EventInvokers;
 
 #if UNITY_EDITOR
 
@@ -41,7 +40,7 @@ namespace LeonDrace.ObserverEventSystem.Tests
 		{
 			bool invoked = false;
 			EventManager.Instance.AddListener<NoArgsEvent>((x) => { invoked = true; });
-			EventManager.Instance.Invoke(NoArgs);
+			EventManager.Instance.Invoke(new NoArgsEvent());
 			Assert.IsTrue(invoked);
 		}
 		[Test]
@@ -49,7 +48,7 @@ namespace LeonDrace.ObserverEventSystem.Tests
 		{
 			bool invoked = false;
 			EventManager.Instance.AddListener<NoArgsEvent>((x) => { invoked = true; });
-			EventManager.Instance.InvokeUnsafe(NoArgs);
+			EventManager.Instance.InvokeUnsafe(new NoArgsEvent());
 			Assert.IsTrue(invoked);
 		}
 

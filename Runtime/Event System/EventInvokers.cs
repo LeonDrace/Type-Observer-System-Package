@@ -9,10 +9,5 @@
 	/// </remarks>
 	public interface IEventInvoker { }
 
-	public partial class EventInvokers
-	{
-		public static NoArgsEvent NoArgs => new();
-
-		public class NoArgsEvent : IEventInvoker { }
-	}
+	public class NoArgsEvent : IEventInvoker { }
 }
