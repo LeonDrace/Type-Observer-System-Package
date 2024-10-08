@@ -77,9 +77,17 @@ public void InvokeHealthEvent()
 
 ### Observables
 There is an Observable<T> and UnityObservable<T> class that you can use as well to create observable fields of any kind.
+
 They do support Inspector updates too.
+
+For collections there is an Observable list that invokes on any element changes.
 
 Namespace:
 ```sh
 using LeonDrace.ObserverEventSystem.Observables;
+```
+```sh
+Observable<T>
+UnityObservable<T>
+ObservableList<T>
 ```
