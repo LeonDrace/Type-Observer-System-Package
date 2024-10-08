@@ -2,7 +2,7 @@
   "name": "com.leondrace.observersystem",
   "displayName": "Observer System",
   "description": "A type based observer system with high level Event Manager and low level api to create self-managed events.",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "keywords": [
     "observer",
     "events"
