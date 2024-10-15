@@ -1,5 +1,5 @@
 {
-    "name": "LeonDrace.ObserverEventSystem.Editor.Tests",
+    "name": "LeonDrace.ObserverEventSystem.Tests.Editor",
     "rootNamespace": "LeonDrace.ObserverEventSystem.Tests",
     "references": [
         "UnityEngine.TestRunner",
